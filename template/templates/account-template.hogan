@@ -1,0 +1,197 @@
+<div id="account-template">
+    <div class="section-main">
+        <a id="logout" class="btn-logout" href="#">
+            [%Выход%]
+        </a>
+    </div>
+    <div class="section-main" id="user-box">
+        <input checked="" id="tbl-1" name="user-menu-tbl" type="radio"/>
+        <label for="tbl-1">
+            [%Информация%]
+        </label>
+        <input id="tbl-2" name="user-menu-tbl" type="radio"/>
+        <label for="tbl-2">
+            [%Сверка%]
+        </label>
+        <input id="tbl-3" name="user-menu-tbl" type="radio"/>
+        <label for="tbl-3">
+            [%Квитанция%]
+        </label>
+        <input id="tbl-4" name="user-menu-tbl" type="radio"/>
+        <label for="tbl-4">
+            [%Договор%]
+        </label>
+        <input id="tbl-5" name="user-menu-tbl" type="radio"/>
+        <label for="tbl-5">
+            [%Платежи%]
+        </label>
+        <input id="tbl-6" name="user-menu-tbl" type="radio"/>
+        <label for="tbl-6">
+            [%Субсидии%]
+        </label>
+        <input id="tbl-7" name="user-menu-tbl" type="radio"/>
+        <label for="tbl-7">
+            Оплата
+        </label>
+        <input id="tbl-8" name="user-menu-tbl" type="radio"/>
+        <label for="tbl-8">
+            [%Приборы учета%]
+        </label>
+        <input id="tbl-9" name="user-menu-tbl" type="radio"/>
+        <label for="tbl-9">
+            [%Профиль%]
+        </label>
+        <input id="tbl-10" name="user-menu-tbl" type="radio"/>
+        <label for="tbl-10">
+            [%Интернет приемная%]
+        </label>
+        <div id="user-show">
+            <div>
+                <h3>
+                    [%Информация%]
+                </h3>
+                <div class="table" id="account-info">
+                    <div>
+                        <span>
+                            лицевой счет: {{code}}
+                        </span>
+                    </div>
+                    <div>
+                        <span{{address}}< span="">
+                        </span{{address}}<>
+                    </div>
+                    <div>
+                        <span>
+                            Основной квартиросъемщик: {{fio}}
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            Телефоны абонента: {{phone}}
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            ЦТП: {{heatpoint}}
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            Район: {{area}}
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            Котельная: {{boiler}}
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            {{areaAddress}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3>
+                    [%Сверка%]
+                </h3>
+                <div class="table">
+                    [[-TvTable? &tvname;=`tableRevise`]]
+                </div>
+            </div>
+            <div>
+                <h3>
+                    [%Квитанция%]
+                </h3>
+                <div class="table">
+                    [[-TvTable? &tvname;=`tableReceipt`]]
+                </div>
+            </div>
+            <div>
+                <h3>
+                    [%Договор%]
+                </h3>
+                <div class="table">
+                    [[-TvTable? &tvname;=`tableContract`]]
+                </div>
+            </div>
+            <div>
+                <h3>
+                    [%Платежи%]
+                </h3>
+                <div class="table">
+                    [[-TvTable? &tvname;=`tablePayments`]]
+                </div>
+            </div>
+            <div>
+                <h3>
+                    [%Субсидии%]
+                </h3>
+                <div class="table">
+                    [[-TvTable? &tvname;=`tableSub`]]
+                </div>
+            </div>
+            <div>
+                <h3>
+                    Оплата
+                </h3>
+                <div class="table">
+                </div>
+            </div>
+            <div>
+                <h3>
+                    [%Приборы учета%]
+                </h3>
+                <div class="table">
+                    [[-TvTable? &tvname;=`tableMetr`]]
+                </div>
+            </div>
+            <div>
+                <h3>
+                    [%Профиль%]
+                </h3>
+                <div class="register user-form-card">
+                    <form action="[+action+]" id="websignupfrm" method="post" name="websignupfrm" role="form">
+                        <input name="formid" type="hidden" value="registerForm"/>
+                        <h3>
+                            [%Детали профиля%]
+                        </h3>
+                        <div class="form-group user-form-reg">
+                            <label class="control-label" for="fullname">
+                                [%Имя пользователя%] :
+                            </label>
+                            <input class="form-control entry-field" id="fullname" maxlength="100" name="fullname" placeholder="[%Имя пользователя%]" type="text" value=""/>
+                        </div>
+                        <div class="form-group user-form-reg">
+                            <label class="control-label" for="email">
+                                Email :
+                            </label>
+                            <input class="form-control entry-field" id="email" name="email" placeholder="Email" type="text" value=""/>
+                        </div>
+                        <div class="form-group user-form-reg">
+                            <h3>
+                                Пароль
+                            </h3>
+                            <input class="form-control entry-field" id="su_password" name="password" placeholder="Пароль" type="password"/>
+                        </div>
+                        <div class="form-group user-form-reg">
+                            <input class="form-control entry-field" id="confirmpassword" name="repeatPassword" placeholder="[%Повторите пароль%]" type="password"/>
+                        </div>
+                        <div class="form-group user-form-reg">
+                            <input class="btn btn-success btn-lg btm-form" name="cmdwebsignup" type="submit" value="[%Отправить%]"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <h3>
+                    [%Интернет приемная%]
+                </h3>
+                <div class="online-feedback-card">
+                    [!eForm? &formid;=`onlinefeedbackForm` &subject;=`Сообщение с сайта [(site_name)], онлайн приемная` &tpl;=`onlinefeedbackForm` &report;=`feedbackReport` &gotoid;=`[*id*]` &vericode;=`0`!]
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

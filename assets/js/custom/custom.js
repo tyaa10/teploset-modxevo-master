@@ -46,7 +46,7 @@ if($('#websigninfrm').length > 0){
 	            dataType: 'json',
 	            type: "POST",
 	            data: {
-	            	'action': 'fetch-by-id'
+	            	'action': 'fetch-all-by-id'
 	            	, 'code': $('#websigninfrm').find('#code').val()
 	            	, 'surname': encodeURIComponent($('#websigninfrm').find('#surname').val())
 	            	//, 'surname': $('#websigninfrm').find('#surname').val()
@@ -86,10 +86,10 @@ if($('#websigninfrm').length > 0){
 						        	}
 						        });
 						});
-					});
+					}, 'html');
 	        	}
-	        	$('#websigninfrm').find('#code').val('');
-	        	$('#websigninfrm').find('#surname').val('');
+	        	//$('#websigninfrm').find('#code').val('');
+	        	//$('#websigninfrm').find('#surname').val('');
 			});
 	    }
 	};

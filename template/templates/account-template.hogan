@@ -53,41 +53,42 @@
                 <div class="table" id="account-info">
                     <div>
                         <span>
-                            лицевой счет: {{code}}
-                        </span>
-                    </div>
-                    <div>
-                        <span{{address}}< span="">
-                        </span{{address}}<>
-                    </div>
-                    <div>
-                        <span>
-                            Основной квартиросъемщик: {{fio}}
+                            лицевой счет: {{accountDetails.code}}
                         </span>
                     </div>
                     <div>
                         <span>
-                            Телефоны абонента: {{phone}}
+                        	Адрес: {{accountDetails.address}}
                         </span>
                     </div>
                     <div>
                         <span>
-                            ЦТП: {{heatpoint}}
+                            Основной квартиросъемщик: {{accountDetails.fio}}
                         </span>
                     </div>
                     <div>
                         <span>
-                            Район: {{area}}
+                            Телефоны абонента: {{accountDetails.phone}}
                         </span>
                     </div>
                     <div>
                         <span>
-                            Котельная: {{boiler}}
+                            ЦТП: {{accountDetails.heatpoint}}
                         </span>
                     </div>
                     <div>
                         <span>
-                            {{areaAddress}}
+                            Район: {{accountDetails.area}}
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            Котельная: {{accountDetails.boiler}}
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            {{accountDetails.areaAddress}}
                         </span>
                     </div>
                 </div>
@@ -113,7 +114,16 @@
                     [%Договор%]
                 </h3>
                 <div class="table">
-                    [[-TvTable? &tvname;=`tableContract`]]
+                    <div>
+                        <span>
+                            Номер договора: {{accountDogRestr.dogNumber}}{{^accountDogRestr.dogNumber}}-{{/accountDogRestr.dogNumber}}
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                        	Дата заключения: {{accountDogRestr.dogDate}}{{^accountDogRestr.dogDate}}-{{/accountDogRestr.dogDate}}
+                        </span>
+                    </div>
                 </div>
             </div>
             <div>

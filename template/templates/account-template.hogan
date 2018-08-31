@@ -1,94 +1,76 @@
 <div id="account-template">
     <div class="section-main">
-        <a id="logout" class="btn-logout" href="#">
-            [%Выход%]
-        </a>
+        <a id="logout" class="btn-logout" href="#">{{dict.Выход}}</a>
     </div>
     <div class="section-main" id="user-box">
         <input checked="" id="tbl-1" name="user-menu-tbl" type="radio"/>
-        <label for="tbl-1">
-            [%Информация%]
-        </label>
-        <input id="tbl-2" name="user-menu-tbl" type="radio"/>
+        <label for="tbl-1">{{dict.Информация}}</label>
+        <!-- <input id="tbl-2" name="user-menu-tbl" type="radio"/>
         <label for="tbl-2">
             [%Сверка%]
         </label>
         <input id="tbl-3" name="user-menu-tbl" type="radio"/>
         <label for="tbl-3">
             [%Квитанция%]
-        </label>
+        </label> -->
         <input id="tbl-4" name="user-menu-tbl" type="radio"/>
-        <label for="tbl-4">
-            [%Договор%]
-        </label>
+        <label for="tbl-4">{{dict.Договор}}</label>
         <input id="tbl-5" name="user-menu-tbl" type="radio"/>
-        <label for="tbl-5">
-            [%Платежи%]
-        </label>
+        <label for="tbl-5">{{dict.Платежи}}</label>
         <input id="tbl-6" name="user-menu-tbl" type="radio"/>
-        <label for="tbl-6">
-            [%Субсидии%]
-        </label>
+        <label for="tbl-6">{{dict.Субсидии}}</label>
         <input id="tbl-7" name="user-menu-tbl" type="radio"/>
         <label for="tbl-7">
             Оплата
         </label>
         <input id="tbl-8" name="user-menu-tbl" type="radio"/>
-        <label for="tbl-8">
-            [%Приборы учета%]
-        </label>
+        <label for="tbl-8">{{dict.Приборы учета}}</label>
         <input id="tbl-9" name="user-menu-tbl" type="radio"/>
-        <label for="tbl-9">
-            [%Профиль%]
-        </label>
+        <label for="tbl-9">{{dict.Профиль}}</label>
         <input id="tbl-10" name="user-menu-tbl" type="radio"/>
-        <label for="tbl-10">
-            [%Интернет приемная%]
-        </label>
+        <label for="tbl-10">{{dict.Интернет приемная}}</label>
         <div id="user-show">
             <div>
-                <h3>
-                    [%Информация%]
-                </h3>
+                <h3>{{dict.Информация}}</h3>
                 <div class="table" id="account-info">
                     <div>
                         <span>
-                            лицевой счет: {{accountDetails.code}}
+                            {{dict.лицевой счет}}: {{accountDetails.code}}
                         </span>
                     </div>
                     <div>
                         <span>
-                        	Адрес: {{accountDetails.address}}
+                        	{{dict.адрес}}: {{accountDetails.address}}
                         </span>
                     </div>
                     <div>
                         <span>
-                            Основной квартиросъемщик: {{accountDetails.fio}}
+                            {{dict.основной квартиросъемщик}}: {{accountDetails.fio}}
                         </span>
                     </div>
                     <div>
                         <span>
-                            Телефоны абонента: {{accountDetails.phone}}
+                            {{dict.телефоны абонента}}: {{accountDetails.phone}}
                         </span>
                     </div>
                     <div>
                         <span>
-                            ЦТП: {{accountDetails.heatpoint}}
+                            {{dict.цтп}}: {{accountDetails.heatpoint}}
                         </span>
                     </div>
                     <div>
                         <span>
-                            Район: {{accountDetails.area}}
+                            {{dict.район}}: {{accountDetails.area}}
                         </span>
                     </div>
                     <div>
                         <span>
-                            Котельная: {{accountDetails.boiler}}
+                            {{dict.котельная}}: {{accountDetails.boiler}}
                         </span>
                     </div>
                     <div>
                         <span>
-                            {{accountDetails.areaAddress}}
+                            {{dict.адрес и телефон абонентного участка}}: {{accountDetails.areaAddress}}
                         </span>
                     </div>
                 </div>
@@ -98,7 +80,8 @@
                     [%Сверка%]
                 </h3>
                 <div class="table">
-                    [[-TvTable? &tvname;=`tableRevise`]]
+                    <!-- [[-TvTable? &tvname;=`tableRevise`]] -->
+                    Раздел в состоянии разработки
                 </div>
             </div>
             <div>
@@ -106,40 +89,37 @@
                     [%Квитанция%]
                 </h3>
                 <div class="table">
-                    [[-TvTable? &tvname;=`tableReceipt`]]
+                    <!-- [[-TvTable? &tvname;=`tableReceipt`]] -->
+                    Раздел в состоянии разработки
                 </div>
             </div>
             <div>
-                <h3>
-                    [%Договор%]
-                </h3>
+                <h3>{{dict.Договор}}</h3>
                 <div class="table">
                     <div>
                         <span>
-                            Номер договора: {{accountDogRestr.dogNumber}}{{^accountDogRestr.dogNumber}}-{{/accountDogRestr.dogNumber}}
+                            {{dict.номер договора}}: {{accountDogRestr.dogNumber}}{{^accountDogRestr.dogNumber}}-{{/accountDogRestr.dogNumber}}
                         </span>
                     </div>
                     <div>
                         <span>
-                        	Дата заключения: {{accountDogRestr.dogDate}}{{^accountDogRestr.dogDate}}-{{/accountDogRestr.dogDate}}
+                        	{{dict.дата заключения}}: {{accountDogRestr.dogDate}}{{^accountDogRestr.dogDate}}-{{/accountDogRestr.dogDate}}
                         </span>
                     </div>
                 </div>
             </div>
             <div>
-                <h3>
-                    [%Платежи%]
-                </h3>
+                <h3>{{dict.Платежи}}</h3>
                 <div class="table">
-                    [[-TvTable? &tvname;=`tablePayments`]]
+                    <!-- [[-TvTable? &tvname;=`tablePayments`]] -->
+                    Раздел в состоянии разработки
                 </div>
             </div>
             <div>
-                <h3>
-                    [%Субсидии%]
-                </h3>
+                <h3>{{dict.Субсидии}}</h3>
                 <div class="table">
-                    [[-TvTable? &tvname;=`tableSub`]]
+                    <!-- [[-TvTable? &tvname;=`tableSub`]] -->
+                    Раздел в состоянии разработки
                 </div>
             </div>
             <div>
@@ -147,31 +127,25 @@
                     Оплата
                 </h3>
                 <div class="table">
+                	Раздел в состоянии разработки
                 </div>
             </div>
             <div>
-                <h3>
-                    [%Приборы учета%]
-                </h3>
+                <h3>{{dict.Приборы учета}}</h3>
                 <div class="table">
-                    [[-TvTable? &tvname;=`tableMetr`]]
+                    <!-- [[-TvTable? &tvname;=`tableMetr`]] -->
+                    Раздел в состоянии разработки
                 </div>
             </div>
             <div>
-                <h3>
-                    [%Профиль%]
-                </h3>
+                <h3>{{dict.Профиль}}</h3>
                 <div class="register user-form-card">
-                    <form action="[+action+]" id="websignupfrm" method="post" name="websignupfrm" role="form">
+                    <!-- <form action="[+action+]" id="websignupfrm" method="post" name="websignupfrm" role="form">
                         <input name="formid" type="hidden" value="registerForm"/>
-                        <h3>
-                            [%Детали профиля%]
-                        </h3>
+                        <h3>{{dict.Детали профиля}}</h3>
                         <div class="form-group user-form-reg">
-                            <label class="control-label" for="fullname">
-                                [%Имя пользователя%] :
-                            </label>
-                            <input class="form-control entry-field" id="fullname" maxlength="100" name="fullname" placeholder="[%Имя пользователя%]" type="text" value=""/>
+                            <label class="control-label" for="fullname">{{dict.Имя пользователя}}</label>
+                            <input class="form-control entry-field" id="fullname" maxlength="100" name="fullname" placeholder="{{dict.Имя пользователя}}" type="text" value=""/>
                         </div>
                         <div class="form-group user-form-reg">
                             <label class="control-label" for="email">
@@ -186,20 +160,20 @@
                             <input class="form-control entry-field" id="su_password" name="password" placeholder="Пароль" type="password"/>
                         </div>
                         <div class="form-group user-form-reg">
-                            <input class="form-control entry-field" id="confirmpassword" name="repeatPassword" placeholder="[%Повторите пароль%]" type="password"/>
+                            <input class="form-control entry-field" id="confirmpassword" name="repeatPassword" placeholder="{{dict.Повторите пароль}}" type="password"/>
                         </div>
                         <div class="form-group user-form-reg">
-                            <input class="btn btn-success btn-lg btm-form" name="cmdwebsignup" type="submit" value="[%Отправить%]"/>
+                            <input class="btn btn-success btn-lg btm-form" name="cmdwebsignup" type="submit" value="{{dict.Отправить}}"/>
                         </div>
-                    </form>
+                    </form> -->
+                    Раздел в состоянии разработки
                 </div>
             </div>
             <div>
-                <h3>
-                    [%Интернет приемная%]
-                </h3>
-                <div class="online-feedback-card">
-                    [!eForm? &formid;=`onlinefeedbackForm` &subject;=`Сообщение с сайта [(site_name)], онлайн приемная` &tpl;=`onlinefeedbackForm` &report;=`feedbackReport` &gotoid;=`[*id*]` &vericode;=`0`!]
+                <h3>{{dict.Интернет приемная}}</h3>
+                <div class="online-feedback-card"><!-- 
+                    [!eForm? &formid;=`onlinefeedbackForm` &subject;=`Сообщение с сайта [(site_name)], онлайн приемная` &tpl;=`onlinefeedbackForm` &report;=`feedbackReport` &gotoid;=`[*id*]` &vericode;=`0`!] -->
+                    Раздел в состоянии разработки
                 </div>
             </div>
         </div>

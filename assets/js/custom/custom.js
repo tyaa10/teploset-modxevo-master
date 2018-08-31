@@ -4,7 +4,9 @@ if($('#websigninfrm').length > 0){
 
 	var signInFormValidate = function(){
 
-		//console.log($('#websigninfrm'));
+		var currentLang =
+			($('body').attr('lang') === 'ua') ? 'uk' : $('body').attr('lang');
+		console.log(currentLang);
 		$('#websigninfrm').validate({
 	        rules: {
 	        	code: {
@@ -17,7 +19,8 @@ if($('#websigninfrm').length > 0){
 	            	required: true
 	            }
 	        },
-	        messages: {
+	        lang: currentLang
+	        /*messages: {
 	        	code: {
 	                required: "Required"
 	                , minlength: "Enter six (6) digits please"
@@ -27,7 +30,7 @@ if($('#websigninfrm').length > 0){
 	        	surname: {
 	                required: "Required"
 	            }
-	        }
+	        }*/
 	    });
 	};
 
@@ -49,6 +52,7 @@ if($('#websigninfrm').length > 0){
 	            	'action': 'fetch-all-by-id'
 	            	, 'code': $('#websigninfrm').find('#code').val()
 	            	, 'surname': encodeURIComponent($('#websigninfrm').find('#surname').val())
+	            	, 'lang': $('body').attr('lang')
 	            	//, 'surname': $('#websigninfrm').find('#surname').val()
 	            },
 	            cache : false

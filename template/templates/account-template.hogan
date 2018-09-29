@@ -112,7 +112,31 @@
                 <h3>{{dict.Платежи}}</h3>
                 <div class="table">
                     <!-- [[-TvTable? &tvname;=`tablePayments`]] -->
-                    Раздел в состоянии разработки
+                    <div class="divTable">
+                    	<div class="divTableBody">
+                    		<div class="divTableRow">
+                    			<div class="divTableCell">Месяц</div>
+                    			<div class="divTableCell">Источник</div>
+                    			<div class="divTableCell">Вид</div>
+                    			<div class="divTableCell">Дата</div>
+                    			<div class="divTableCell">Услуга</div>
+                    			<div class="divTableCell">Сумма</div>
+                    		</div>
+                    		{{#accountPayments}}
+                    			<div class="divTableRow">
+	                    			<div class="divTableCell">{{procdate}}</div>
+		                    		<div class="divTableCell">{{payerName}}</div>
+		                    		<div class="divTableCell">{{paymentType}}</div>
+		                    		<div class="divTableCell">{{dateaction}}</div>
+		                    		<div class="divTableCell">{{service}}</div>
+		                    		<div class="divTableCell">{{summ}}</div>
+	                    		</div>
+                    		{{/accountPayments}}
+                    		<!-- {{^accountPayments}}
+	                    		<td class="text-center" colspan="6">У Вас не было платежей</td>
+                    		{{/accountPayments}} -->
+                    	</div>
+                    </div>
                 </div>
             </div>
             <div>

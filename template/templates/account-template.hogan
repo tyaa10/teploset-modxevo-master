@@ -115,12 +115,12 @@
                     <div class="divTable">
                     	<div class="divTableBody">
                     		<div class="divTableRow">
-                    			<div class="divTableCell">Месяц</div>
-                    			<div class="divTableCell">Источник</div>
-                    			<div class="divTableCell">Вид</div>
-                    			<div class="divTableCell">Дата</div>
-                    			<div class="divTableCell">Услуга</div>
-                    			<div class="divTableCell">Сумма</div>
+                    			<div class="divTableCell">{{dict.Месяц}}</div>
+                    			<div class="divTableCell">{{dict.Источник}}</div>
+                    			<div class="divTableCell">{{dict.Вид}}</div>
+                    			<div class="divTableCell">{{dict.Дата}}</div>
+                    			<div class="divTableCell">{{dict.Услуга}}</div>
+                    			<div class="divTableCell">{{dict.Сумма}}</div>
                     		</div>
                     		{{#accountPayments}}
                     			<div class="divTableRow">

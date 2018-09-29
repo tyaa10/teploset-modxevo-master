@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Авг 31 2018 г., 12:25
+-- Время создания: Сен 29 2018 г., 19:58
 -- Версия сервера: 5.5.53
--- Версия PHP: 5.5.38
+-- Версия PHP: 5.6.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -40,8 +40,8 @@ CREATE TABLE `evo_active_users` (
 --
 
 INSERT INTO `evo_active_users` (`sid`, `internalKey`, `username`, `lasthit`, `action`, `id`) VALUES
-('28vt82n4alo080q8fb95ctnso5', 1, 'admin', 1533316499, '67', 16),
-('ehprn028ij6p5oi8bd62im3eu7', 1, 'admin', 1535707282, '26', NULL);
+('v9oadqk1rm0651hejnf10cghq2', 1, 'admin', 1538240024, '26', NULL),
+('ehprn028ij6p5oi8bd62im3eu7', 1, 'admin', 1535709051, '67', 5);
 
 -- --------------------------------------------------------
 
@@ -57,16 +57,6 @@ CREATE TABLE `evo_active_user_locks` (
   `elementId` int(10) NOT NULL DEFAULT '0',
   `lasthit` int(20) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Contains data about locked elements.';
-
---
--- Дамп данных таблицы `evo_active_user_locks`
---
-
-INSERT INTO `evo_active_user_locks` (`id`, `sid`, `internalKey`, `elementType`, `elementId`, `lasthit`) VALUES
-(235, 'ehprn028ij6p5oi8bd62im3eu7', 1, 3, 5, 1535706149),
-(227, 'ehprn028ij6p5oi8bd62im3eu7', 1, 1, 16, 1535703961),
-(221, 'ehprn028ij6p5oi8bd62im3eu7', 1, 4, 36, 1535702051),
-(220, 'ehprn028ij6p5oi8bd62im3eu7', 1, 4, 31, 1535699132);
 
 -- --------------------------------------------------------
 
@@ -86,7 +76,7 @@ CREATE TABLE `evo_active_user_sessions` (
 --
 
 INSERT INTO `evo_active_user_sessions` (`sid`, `internalKey`, `lasthit`, `ip`) VALUES
-('ehprn028ij6p5oi8bd62im3eu7', 1, 1535707282, '127.0.0.1');
+('v9oadqk1rm0651hejnf10cghq2', 1, 1538240024, '127.0.0.1');
 
 -- --------------------------------------------------------
 
@@ -330,6 +320,9 @@ INSERT INTO `evo_event_log` (`id`, `eventid`, `createdon`, `type`, `user`, `user
 (157, 0, 1535690367, 3, 0, 1, 'Call undefined method', '$modx-&gt;setOption() is undefined function<br /><br />C:/OpenServer/domains/teplo/manager/includes/document.parser.class.inc.php(1926) : eval()\'d code(line:10)'),
 (158, 0, 1535690367, 3, 0, 1, 'Call undefined method', '$modx-&gt;getService() is undefined function<br /><br />C:/OpenServer/domains/teplo/manager/includes/document.parser.class.inc.php(1926) : eval()\'d code(line:12)'),
 (159, 0, 1535698961, 3, 0, 1, 'Snippet - accounts / Execution of a query to the d', '<h2 style=\"color:red\">&laquo; Evo Parse Error &raquo;</h2><h3 style=\"color:red\">Execution of a query to the database failed - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'\'\' at line 1</h3><div style=\"font-weight:bold;border:1px solid #ccc;padding:8px;color:#333;background-color:#ffffcd;margin-bottom:15px;\">SQL &gt; <span id=\"sqlHolder\">SELECT name, ru FROM `teplo`.`evo_lexicon` WHERE name=\'</span></div>\n<table class=\"grid\">\n	<thead>\n	<tr class=\"\">\n		<th width=\"100px\" >Error information</th>\n		<th></th>\n	</tr>\n	</thead>\n	<tr class=\"gridItem\">\n		<td>Current Snippet</td>\n		<td>accounts</td>\n	</tr>\n</table>\n<br />\n<table class=\"grid\">\n	<thead>\n	<tr class=\"\">\n		<th width=\"100px\" >Basic info</th>\n		<th></th>\n	</tr>\n	</thead>\n	<tr class=\"gridItem\">\n		<td>REQUEST_URI</td>\n		<td>http://teplo/accounts</td>\n	</tr>\n	<tr class=\"gridAltItem\">\n		<td>Resource</td>\n		<td>[150] <a href=\"http://teplo/accounts\" target=\"_blank\">accounts</a></td>\n	</tr>\n	<tr class=\"gridItem\">\n		<td>Referer</td>\n		<td>http://teplo/ru/account</td>\n	</tr>\n	<tr class=\"gridAltItem\">\n		<td>User Agent</td>\n		<td>Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0</td>\n	</tr>\n	<tr class=\"gridItem\">\n		<td>IP</td>\n		<td>127.0.0.1</td>\n	</tr>\n	<tr class=\"gridAltItem\">\n		<td>Current time</td>\n		<td>2018-08-31 10:02:41</td>\n	</tr>\n</table>\n<br />\n<table class=\"grid\">\n	<thead>\n	<tr class=\"\">\n		<th width=\"100px\" >Benchmarks</th>\n		<th></th>\n	</tr>\n	</thead>\n	<tr class=\"gridItem\">\n		<td>MySQL</td>\n		<td>0.0113 s (13 Requests)</td>\n	</tr>\n	<tr class=\"gridAltItem\">\n		<td>PHP</td>\n		<td>0.1057 s</td>\n	</tr>\n	<tr class=\"gridItem\">\n		<td>Total</td>\n		<td>0.1169 s</td>\n	</tr>\n	<tr class=\"gridAltItem\">\n		<td>Memory</td>\n		<td>4.5046157836914 mb</td>\n	</tr>\n</table>\n<br />\n<table class=\"grid\">\n	<thead>\n	<tr class=\"\">\n		<th>Backtrace</th>\n	</tr>\n	</thead>\n	<tr class=\"gridItem\">\n		<td><strong>DocumentParser->executeParser</strong>()<br />index.php on line 139</td>\n	</tr>\n	<tr class=\"gridAltItem\">\n		<td><strong>DocumentParser->prepareResponse</strong>()<br />manager/includes/document.parser.class.inc.php on line 2825</td>\n	</tr>\n	<tr class=\"gridItem\">\n		<td><strong>DocumentParser->outputContent</strong>()<br />manager/includes/document.parser.class.inc.php on line 2949</td>\n	</tr>\n	<tr class=\"gridAltItem\">\n		<td><strong>DocumentParser->parseDocumentSource</strong>(\'[[accounts]]\')<br />manager/includes/document.parser.class.inc.php on line 897</td>\n	</tr>\n	<tr class=\"gridItem\">\n		<td><strong>DocumentParser->evalSnippets</strong>(\'[[accounts]]\')<br />manager/includes/document.parser.class.inc.php on line 2676</td>\n	</tr>\n	<tr class=\"gridAltItem\">\n		<td><strong>DocumentParser->_get_snip_result</strong>(\'accounts\')<br />manager/includes/document.parser.class.inc.php on line 1989</td>\n	</tr>\n	<tr class=\"gridItem\">\n		<td><strong>DocumentParser->evalSnippet</strong>(string $var1, array $var2)<br />manager/includes/document.parser.class.inc.php on line 2077</td>\n	</tr>\n	<tr class=\"gridAltItem\">\n		<td><strong>eval</strong>()<br />manager/includes/document.parser.class.inc.php on line 1926</td>\n	</tr>\n	<tr class=\"gridItem\">\n		<td><strong>DocumentParser->runSnippet</strong>(\'lang\', array $var2)<br />manager/includes/document.parser.class.inc.php(1926) : eval()\'d code on line 42</td>\n	</tr>\n	<tr class=\"gridAltItem\">\n		<td><strong>DocumentParser->evalSnippet</strong>(string $var1, array $var2)<br />manager/includes/document.parser.class.inc.php on line 4244</td>\n	</tr>\n	<tr class=\"gridItem\">\n		<td><strong>eval</strong>()<br />manager/includes/document.parser.class.inc.php on line 1926</td>\n	</tr>\n	<tr class=\"gridAltItem\">\n		<td><strong>DBAPI->query</strong>(string $var1)<br />manager/includes/document.parser.class.inc.php(1926) : eval()\'d code on line 24</td>\n	</tr>\n</table>\n');
+INSERT INTO `evo_event_log` (`id`, `eventid`, `createdon`, `type`, `user`, `usertype`, `source`, `description`) VALUES
+(160, 0, 1537862695, 3, 0, 1, 'Snippet - accounts / PHP Parse Error', '<b>Trying to get property of non-object</b><br />\n<h2 style=\"color:red\">&laquo; Evo Parse Error &raquo;</h2><div style=\"font-weight:bold;border:1px solid #ccc;padding:8px;color:#333;background-color:#ffffcd;margin-bottom:15px;\">Error : file_get_contents(http://192.168.0.106:8080/TeplosetEJB-war/account?action=fetch-all-by-id&amp;id=247484&amp;surname=%25D0%25AF%25D0%25BD%25D0%25B3%25D0%25B8%25D1%2587%25D0%25B5%25D1%2580): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found\r\n</div>\n<table class=\"grid\">\n	<thead>\n	<tr class=\"\">\n		<th width=\"100px\" >Error information</th>\n		<th></th>\n	</tr>\n	</thead>\n	<tr class=\"gridItem\">\n		<td>ErrorType[num]</td>\n		<td>WARNING[2]</td>\n	</tr>\n	<tr class=\"gridAltItem\">\n		<td>File</td>\n		<td>C:\\OpenServer\\domains\\teplo\\manager\\includes\\document.parser.class.inc.php(1926) : eval()\'d code</td>\n	</tr>\n	<tr class=\"gridItem\">\n		<td>Line</td>\n		<td>35</td>\n	</tr>\n	<tr class=\"gridAltItem\">\n		<td>Current Snippet</td>\n		<td>accounts</td>\n	</tr>\n</table>\n<br />\n<table class=\"grid\">\n	<thead>\n	<tr class=\"\">\n		<th width=\"100px\" >Basic info</th>\n		<th></th>\n	</tr>\n	</thead>\n	<tr class=\"gridItem\">\n		<td>REQUEST_URI</td>\n		<td>http://teplo/accounts</td>\n	</tr>\n	<tr class=\"gridAltItem\">\n		<td>Resource</td>\n		<td>[150] <a href=\"http://teplo/accounts\" target=\"_blank\">accounts</a></td>\n	</tr>\n	<tr class=\"gridItem\">\n		<td>Referer</td>\n		<td>http://teplo/ru/account</td>\n	</tr>\n	<tr class=\"gridAltItem\">\n		<td>User Agent</td>\n		<td>Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0</td>\n	</tr>\n	<tr class=\"gridItem\">\n		<td>IP</td>\n		<td>127.0.0.1</td>\n	</tr>\n	<tr class=\"gridAltItem\">\n		<td>Current time</td>\n		<td>2018-09-25 11:04:55</td>\n	</tr>\n</table>\n<br />\n<table class=\"grid\">\n	<thead>\n	<tr class=\"\">\n		<th width=\"100px\" >Benchmarks</th>\n		<th></th>\n	</tr>\n	</thead>\n	<tr class=\"gridItem\">\n		<td>MySQL</td>\n		<td>0.0175 s (12 Requests)</td>\n	</tr>\n	<tr class=\"gridAltItem\">\n		<td>PHP</td>\n		<td>0.0717 s</td>\n	</tr>\n	<tr class=\"gridItem\">\n		<td>Total</td>\n		<td>0.0892 s</td>\n	</tr>\n	<tr class=\"gridAltItem\">\n		<td>Memory</td>\n		<td>3.2576675415039 mb</td>\n	</tr>\n</table>\n<br />\n<table class=\"grid\">\n	<thead>\n	<tr class=\"\">\n		<th>Backtrace</th>\n	</tr>\n	</thead>\n	<tr class=\"gridItem\">\n		<td><strong>DocumentParser->executeParser</strong>()<br />index.php on line 139</td>\n	</tr>\n	<tr class=\"gridAltItem\">\n		<td><strong>DocumentParser->prepareResponse</strong>()<br />manager/includes/document.parser.class.inc.php on line 2825</td>\n	</tr>\n	<tr class=\"gridItem\">\n		<td><strong>DocumentParser->outputContent</strong>()<br />manager/includes/document.parser.class.inc.php on line 2949</td>\n	</tr>\n	<tr class=\"gridAltItem\">\n		<td><strong>DocumentParser->parseDocumentSource</strong>(\'[[accounts]]\')<br />manager/includes/document.parser.class.inc.php on line 897</td>\n	</tr>\n	<tr class=\"gridItem\">\n		<td><strong>DocumentParser->evalSnippets</strong>(\'[[accounts]]\')<br />manager/includes/document.parser.class.inc.php on line 2676</td>\n	</tr>\n	<tr class=\"gridAltItem\">\n		<td><strong>DocumentParser->_get_snip_result</strong>(\'accounts\')<br />manager/includes/document.parser.class.inc.php on line 1989</td>\n	</tr>\n	<tr class=\"gridItem\">\n		<td><strong>DocumentParser->evalSnippet</strong>(string $var1, array $var2)<br />manager/includes/document.parser.class.inc.php on line 2077</td>\n	</tr>\n	<tr class=\"gridAltItem\">\n		<td><strong>eval</strong>()<br />manager/includes/document.parser.class.inc.php on line 1926</td>\n	</tr>\n	<tr class=\"gridItem\">\n		<td><strong>file_get_contents</strong>(string $var1)<br />manager/includes/document.parser.class.inc.php(1926) : eval()\'d code on line 35</td>\n	</tr>\n</table>\n'),
+(161, 0, 1537863332, 3, 1, 0, 'Файл конфигурации все еще доступен для записи', 'Злоумышленники потенциально могут нанести вред вашему сайту. <strong>Серьёзно.</strong> Пожалуйста, установите права доступа к файлу конфигурации (/manager/includes/config.inc.php) в режим \'Только для чтения\'');
 
 -- --------------------------------------------------------
 
@@ -413,7 +406,13 @@ INSERT INTO `evo_lexicon` (`id`, `name`, `ru`, `ua`) VALUES
 (62, 'котельная', 'котельная', 'котельна'),
 (63, 'адрес и телефон абонентного участка', 'адрес и телефон абонентного участка', 'адреса і телефон абонентної ділянки'),
 (64, 'номер договора', 'номер договора', 'номер договору'),
-(65, 'дата заключения', 'дата заключения', 'дата укладення');
+(65, 'дата заключения', 'дата заключения', 'дата укладення'),
+(66, 'Месяц', 'Месяц', 'Місяць'),
+(67, 'Источник', 'Источник', 'Джерело'),
+(68, 'Вид', 'Вид', 'Вид'),
+(69, 'Дата', 'Дата', 'Дата'),
+(70, 'Услуга', 'Услуга', 'Послуга'),
+(71, 'Сумма', 'Сумма', 'Сума');
 
 -- --------------------------------------------------------
 
@@ -3489,7 +3488,29 @@ INSERT INTO `evo_manager_log` (`id`, `timestamp`, `internalKey`, `username`, `ac
 (5441, 1535706152, 1, 'admin', 26, '-', '-', 'Refreshing site', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0'),
 (5442, 1535706497, 1, 'admin', 106, '-', '-', 'Viewing Modules', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0'),
 (5443, 1535706502, 1, 'admin', 112, '3', 'evoBabelLexicon', 'Execute module', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0'),
-(5444, 1535707282, 1, 'admin', 26, '-', '-', 'Refreshing site', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0');
+(5444, 1535707282, 1, 'admin', 26, '-', '-', 'Refreshing site', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0'),
+(5445, 1537863332, 1, 'admin', 58, '-', 'MODX', 'Logged in', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0'),
+(5446, 1537863335, 1, 'admin', 26, '-', '-', 'Refreshing site', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0'),
+(5447, 1537863336, 1, 'admin', 26, '-', '-', 'Refreshing site', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0'),
+(5448, 1537863474, 1, 'admin', 26, '-', '-', 'Refreshing site', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0'),
+(5449, 1537863478, 1, 'admin', 26, '-', '-', 'Refreshing site', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0'),
+(5450, 1538195726, 1, 'admin', 26, '-', '-', 'Refreshing site', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0'),
+(5451, 1538195761, 1, 'admin', 301, '12', 'tablePayments', 'Edit Template Variable', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0'),
+(5452, 1538197088, 1, 'admin', 26, '-', '-', 'Refreshing site', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0'),
+(5453, 1538197089, 1, 'admin', 26, '-', '-', 'Refreshing site', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0'),
+(5454, 1538197162, 1, 'admin', 26, '-', '-', 'Refreshing site', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0'),
+(5455, 1538197164, 1, 'admin', 26, '-', '-', 'Refreshing site', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0'),
+(5456, 1538197559, 1, 'admin', 26, '-', '-', 'Refreshing site', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0'),
+(5457, 1538197560, 1, 'admin', 26, '-', '-', 'Refreshing site', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0'),
+(5458, 1538197648, 1, 'admin', 26, '-', '-', 'Refreshing site', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0'),
+(5459, 1538197650, 1, 'admin', 26, '-', '-', 'Refreshing site', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0'),
+(5460, 1538200265, 1, 'admin', 26, '-', '-', 'Refreshing site', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0'),
+(5461, 1538200267, 1, 'admin', 26, '-', '-', 'Refreshing site', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0'),
+(5462, 1538239230, 1, 'admin', 112, '3', 'evoBabelLexicon', 'Execute module', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0'),
+(5463, 1538239953, 1, 'admin', 112, '3', 'evoBabelLexicon', 'Execute module', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0'),
+(5464, 1538239995, 1, 'admin', 112, '3', 'evoBabelLexicon', 'Execute module', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0'),
+(5465, 1538240023, 1, 'admin', 26, '-', '-', 'Refreshing site', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0'),
+(5466, 1538240024, 1, 'admin', 26, '-', '-', 'Refreshing site', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0');
 
 -- --------------------------------------------------------
 
@@ -4757,7 +4778,7 @@ CREATE TABLE `evo_user_attributes` (
 --
 
 INSERT INTO `evo_user_attributes` (`id`, `internalKey`, `fullname`, `role`, `email`, `phone`, `mobilephone`, `blocked`, `blockeduntil`, `blockedafter`, `logincount`, `lastlogin`, `thislogin`, `failedlogincount`, `sessionid`, `dob`, `gender`, `country`, `street`, `city`, `state`, `zip`, `fax`, `photo`, `comment`, `createdon`, `editedon`) VALUES
-(1, 1, 'Admin', 1, 'beninbenino@gmail.com', '', '', 0, 1528612889, 0, 163, 1533138367, 1535284788, 0, 'ehprn028ij6p5oi8bd62im3eu7', 0, 0, '', '', '', '', '', '', '', '', 0, 0);
+(1, 1, 'Admin', 1, 'beninbenino@gmail.com', '', '', 0, 1528612889, 0, 164, 1535284788, 1537863332, 0, 'v9oadqk1rm0651hejnf10cghq2', 0, 0, '', '', '', '', '', '', '', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -5284,7 +5305,7 @@ ALTER TABLE `evo_web_user_settings`
 -- AUTO_INCREMENT для таблицы `evo_active_user_locks`
 --
 ALTER TABLE `evo_active_user_locks`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=236;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=237;
 --
 -- AUTO_INCREMENT для таблицы `evo_categories`
 --
@@ -5304,17 +5325,17 @@ ALTER TABLE `evo_document_groups`
 -- AUTO_INCREMENT для таблицы `evo_event_log`
 --
 ALTER TABLE `evo_event_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
 --
 -- AUTO_INCREMENT для таблицы `evo_lexicon`
 --
 ALTER TABLE `evo_lexicon`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 --
 -- AUTO_INCREMENT для таблицы `evo_manager_log`
 --
 ALTER TABLE `evo_manager_log`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5445;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5467;
 --
 -- AUTO_INCREMENT для таблицы `evo_manager_users`
 --

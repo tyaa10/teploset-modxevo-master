@@ -1,5 +1,24 @@
 //Когда документ загрузился в браузер
 //$(document).ready(function() {
+
+var accountTemplate;
+var billTemplate;
+
+var billData;
+
+//var nowDate = new Date();
+var prevDate = new Date();
+var beforePrevDate = new Date();
+prevDate.setMonth(prevDate.getMonth() - 1);
+beforePrevDate.setMonth(beforePrevDate.getMonth() - 2);
+var dateFormatOptions = {
+  year: 'numeric',
+  month: 'long',
+  timezone: 'UTC'
+};
+var prevMonth = prevDate.toLocaleString("ru", dateFormatOptions);
+var beforePrevMonth = beforePrevDate.toLocaleString("ru", dateFormatOptions);
+
 if($('#websigninfrm').length > 0){
 
 	var signInFormValidate = function(){
@@ -65,12 +84,40 @@ if($('#websigninfrm').length > 0){
 
 	        	} else {
 
+	        		billData = {
+	        			'prevMonth' : prevMonth,
+	        			'accountCode' : resp.accountDetails.code,
+	        			'fio' : resp.accountDetails.fio,
+	        			'address' : resp.accountDetails.address,
+	        			'titleLong' : resp.accountBills[0].titleLong,
+	        			'titleShort' : resp.accountBills[0].titleShort,
+	        			'volume' : resp.accountBills[0].volume,
+	        			'tariff' : resp.accountBills[0].tariff,
+	        			'amountToBePaid' : resp.accountBills[0].amountToBePaid
+	        		};
+
 	        		$.get('/template/templates/account-template.hogan', function(templates){
 	        			
-			            var extTemplate = $(templates).filter('#account-template').html();
-			            var template = Hogan.compile(extTemplate);
+			            accountTemplate = $(templates).find('#account-template').html();
+			            billTemplate = $(templates).find('#bill-template').html();
+			            //console.log(billTemplate);
+			            var template = Hogan.compile(accountTemplate);
+
+			            
+						/*resp[currentData] = {
+							'prevDate' : prevDate.toLocaleString("ru", dateFormatOptions),
+							'beforePrevDate' : beforePrevDate.toLocaleString("ru", dateFormatOptions)
+						};*/
+						//console.log(prevDate.toLocaleString("ru", dateFormatOptions));
+						//console.log(beforePrevDate.toLocaleString("ru", dateFormatOptions));
+
 			            var rendered = template.render(resp);
 			            $('#account-container').html(rendered);
+
+			            //console.log($('#bill-section').find('#prevMonth'));
+			            //console.log($('#bill-section').find('#beforePrevMonth'));
+			            $('#prevMonth').text(prevDate.toLocaleString("ru", dateFormatOptions));
+			            $('#beforePrevMonth').text(beforePrevDate.toLocaleString("ru", dateFormatOptions));
 
 			            $("#logout").click(function(ev){
 							ev.preventDefault();
@@ -90,6 +137,25 @@ if($('#websigninfrm').length > 0){
 						        	}
 						        });
 						});
+
+						$("input[name=print-bill]").click(function(ev){
+							ev.preventDefault();
+							var template = Hogan.compile(billTemplate);
+							//alert("Test");
+							/*var billData = {
+								'test':'test1'
+							};*/
+							var rendered = template.render(billData);
+			            	//$('#account-container').html(rendered);
+							//console.log(rendered);
+							var WinPrint = null;
+							WinPrint = window.open('','','left=0,top=0,width=400,height=200,toolbar=0,scrollbars=1,status=0');
+							if(WinPrint != null)
+							  {
+						  		WinPrint.document.write(rendered);
+							  }
+						});			            
+
 					}, 'html');
 	        	}
 	        	//$('#websigninfrm').find('#code').val('');

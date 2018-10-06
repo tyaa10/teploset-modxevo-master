@@ -10,6 +10,10 @@
             <label for="tbl-1">
                 {{dict.Информация}}
             </label>
+            <input id="tbl-2" name="user-menu-tbl" type="radio"/>
+	        <label for="tbl-2">
+	            Сверка
+	        </label>
             <!-- <input id="tbl-2" name="user-menu-tbl" type="radio"/>
 	        <label for="tbl-2">
 	            [%Сверка%]
@@ -96,11 +100,67 @@
                 </div>
                 <div>
                     <h3>
-                        [%Сверка%]
+                        Сверка
                     </h3>
                     <div class="table">
                         <!-- [[-TvTable? &tvname;=`tableRevise`]] -->
-                        Раздел в состоянии разработки
+                        <div class="divTable">
+                            <div class="divTableBody">
+                                <div class="divTableRow">
+                                	<div class="divTableCell">
+                                        {{dict.Месяц}}
+                                    </div>
+                                    <div class="divTableCell">
+                                        долг <br/>на первое число
+                                    </div>
+                                    <div class="divTableCell">
+                                        горячая вода<br/>начислено
+                                    </div>
+                                    <div class="divTableCell">
+                                        горячая вода<br/>оплата
+                                    </div>
+                                    <div class="divTableCell">
+                                        тепло<br/>начислено
+                                    </div>
+                                    <div class="divTableCell">
+                                        тепло<br/>оплата
+                                    </div>
+                                    <div class="divTableCell">
+                                        сальдо
+                                    </div>
+                                </div>
+                                {{#accountRevises}}
+                                <div class="divTableRow">
+                                    <div class="divTableCell">
+                                        {{monthYear}}
+                                    </div>
+                                    <div class="divTableCell">
+                                        {{beginningDebt}}
+                                    </div>
+                                    <div class="divTableCell">
+                                        {{waterInvoice}}
+                                    </div>
+                                    <div class="divTableCell">
+                                        {{waterPayment}}
+                                    </div>
+                                    <div class="divTableCell">
+                                        {{heatInvoice}}
+                                    </div>
+                                    <div class="divTableCell">
+                                        {{heatPayment}}
+                                    </div>
+                                    <div class="divTableCell">
+                                        {{endDebt}}
+                                    </div>
+                                </div>
+                                {{/accountRevises}}
+	                    		{{^accountRevises}}
+                                <div class="divTableRow">
+                                    У Вас не было сверок
+                                </div>
+                                {{/accountRevises}}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div>

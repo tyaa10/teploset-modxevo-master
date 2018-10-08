@@ -3,8 +3,11 @@
 
 var accountTemplate;
 var billTemplate;
+var billAtRateTemplate;
+var billOnCounterTemplate;
 
-var billData;
+var heatBillData = {};
+var waterBillData = {};
 
 //var nowDate = new Date();
 var prevDate = new Date();
@@ -84,22 +87,53 @@ if($('#websigninfrm').length > 0){
 
 	        	} else {
 
-	        		billData = {
-	        			'prevMonth' : prevMonth,
-	        			'accountCode' : resp.accountDetails.code,
-	        			'fio' : resp.accountDetails.fio,
-	        			'address' : resp.accountDetails.address,
-	        			'titleLong' : resp.accountBills[0].titleLong,
-	        			'titleShort' : resp.accountBills[0].titleShort,
-	        			'volume' : resp.accountBills[0].volume,
-	        			'tariff' : resp.accountBills[0].tariff,
-	        			'amountToBePaid' : resp.accountBills[0].amountToBePaid
-	        		};
+	        		for (var i = 0; i < resp.accountBills.length; i++) {
+					    
+					    if (resp.accountBills[i].typeId == 21
+					    	|| resp.accountBills[i].typeId == 22) {
+
+
+					    	heatBillData = {
+			        			'prevMonth' : prevMonth,
+			        			'accountCode' : resp.accountDetails.code,
+			        			'fio' : resp.accountDetails.fio,
+			        			'address' : resp.accountDetails.address,
+			        			'titleLong' : resp.accountBills[i].titleLong,
+			        			'titleShort' : resp.accountBills[i].titleShort,
+			        			'volume' : resp.accountBills[i].volume,
+			        			'tariff' : resp.accountBills[i].tariff,
+			        			'amountToBePaid' : resp.accountBills[i].amountToBePaid,
+			        			'heatedArea' : resp.accountBills[i].heatedArea,
+			        			'tenantCount' : resp.accountDetails.tenantCount
+			        		};
+
+			        		console.log(heatBillData);
+					    } else if (resp.accountBills[i].typeId == 11
+					    	|| resp.accountBills[i].typeId == 12) {
+
+
+					    	waterBillData = {
+			        			'prevMonth' : prevMonth,
+			        			'accountCode' : resp.accountDetails.code,
+			        			'fio' : resp.accountDetails.fio,
+			        			'address' : resp.accountDetails.address,
+			        			'titleLong' : resp.accountBills[i].titleLong,
+			        			'titleShort' : resp.accountBills[i].titleShort,
+			        			'volume' : resp.accountBills[i].volume,
+			        			'tariff' : resp.accountBills[i].tariff,
+			        			'amountToBePaid' : resp.accountBills[i].amountToBePaid,
+			        			'heatedArea' : resp.accountBills[i].heatedArea,
+			        			'tenantCount' : resp.accountDetails.tenantCount
+			        		};
+					    }
+					}
 
 	        		$.get('/template/templates/account-template.hogan', function(templates){
 	        			
 			            accountTemplate = $(templates).find('#account-template').html();
-			            billTemplate = $(templates).find('#bill-template').html();
+			            //billTemplate = $(templates).find('#bill-template').html();
+			            billAtRateTemplate = $(templates).find('#bill-at-rate-template').html();
+			            billOnCounterTemplate = $(templates).find('#bill-on-counter-template').html();
 			            //console.log(billTemplate);
 			            var template = Hogan.compile(accountTemplate);
 
@@ -138,23 +172,48 @@ if($('#websigninfrm').length > 0){
 						        });
 						});
 
-						$("input[name=print-bill]").click(function(ev){
-							ev.preventDefault();
-							var template = Hogan.compile(billTemplate);
-							//alert("Test");
-							/*var billData = {
-								'test':'test1'
-							};*/
-							var rendered = template.render(billData);
-			            	//$('#account-container').html(rendered);
-							//console.log(rendered);
+						function printBill(type, data){
+
+							var template;
+
+							switch (type) {
+							  case 21:
+							    template = Hogan.compile(billAtRateTemplate);
+							    break;
+							  case 22:
+							    template = Hogan.compile(billOnCounterTemplate);
+							    break;
+							  case 11:
+							    template = Hogan.compile("");
+							    break;
+							  case 12:
+							    template = Hogan.compile("");
+							    break;
+							  default:
+							    //template = Hogan.compile(billTemplate);
+							}
+
+							var rendered = template.render(data);
+
 							var WinPrint = null;
-							WinPrint = window.open('','','left=0,top=0,width=400,height=200,toolbar=0,scrollbars=1,status=0');
+							WinPrint = window.open('','','');
 							if(WinPrint != null)
-							  {
-						  		WinPrint.document.write(rendered);
-							  }
-						});			            
+							{
+					  			WinPrint.document.write(rendered);
+							}
+						}
+
+						$("input[name=print-bill]").click(function(ev){
+
+							ev.preventDefault();
+							printBill($(this).data('type'), heatBillData);
+						});
+
+						$("input[name=print-empty-bill]").click(function(ev){
+
+							ev.preventDefault();
+							printBill($(this).data('type'), {});
+						});            
 
 					}, 'html');
 	        	}

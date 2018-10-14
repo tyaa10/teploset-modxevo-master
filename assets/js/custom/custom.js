@@ -9,7 +9,7 @@ var billOnCounterTemplate;
 var heatBillData = {};
 var waterBillData = {};
 
-//var nowDate = new Date();
+var nowDate = new Date();
 var prevDate = new Date();
 var beforePrevDate = new Date();
 prevDate.setMonth(prevDate.getMonth() - 1);
@@ -19,6 +19,12 @@ var dateFormatOptions = {
   month: 'long',
   timezone: 'UTC'
 };
+var dateFormatOnlyMonthOptions = {
+  month: 'long',
+  timezone: 'UTC'
+};
+var nowMonth = nowDate.toLocaleString("ru", dateFormatOnlyMonthOptions);
+var nowMonthYear = nowDate.toLocaleString("ru", dateFormatOptions);
 var prevMonth = prevDate.toLocaleString("ru", dateFormatOptions);
 var beforePrevMonth = beforePrevDate.toLocaleString("ru", dateFormatOptions);
 
@@ -104,13 +110,22 @@ if($('#websigninfrm').length > 0){
 			        			'tariff' : resp.accountBills[i].tariff,
 			        			'amountToBePaid' : resp.accountBills[i].amountToBePaid,
 			        			'heatedArea' : resp.accountBills[i].heatedArea,
-			        			'tenantCount' : resp.accountDetails.tenantCount
+			        			'tenantCount' : resp.accountDetails.tenantCount,
+			        			'nowMonth' : nowMonth
 			        		};
 
 			        		console.log(heatBillData);
 					    } else if (resp.accountBills[i].typeId == 11
 					    	|| resp.accountBills[i].typeId == 12) {
 
+
+					    	var lastPayment = resp.accountPayments.filter(p => p.service == 'Горячая вода');
+					    	var lastPaymentDate = "";
+					    	var lastPaymentSum = "";
+					    	if (lastPayment.length > 0) {
+					    		lastPaymentDate = lastPayment[0].dateaction;
+					    		lastPaymentSum = lastPayment[0].summ;
+					    	}
 
 					    	waterBillData = {
 			        			'prevMonth' : prevMonth,
@@ -123,7 +138,12 @@ if($('#websigninfrm').length > 0){
 			        			'tariff' : resp.accountBills[i].tariff,
 			        			'amountToBePaid' : resp.accountBills[i].amountToBePaid,
 			        			'heatedArea' : resp.accountBills[i].heatedArea,
-			        			'tenantCount' : resp.accountDetails.tenantCount
+			        			'tenantCount' : resp.accountDetails.tenantCount,
+			        			'beginMeter' : resp.accountBills[i].beginMeter,
+			        			'endMeter' : resp.accountBills[i].endMeter,
+			        			'lastPaymentDate' : lastPaymentDate,
+			        			'lastPaymentSum' : lastPaymentSum,
+			        			'nowMonthYear' : nowMonthYear
 			        		};
 					    }
 					}
@@ -134,10 +154,13 @@ if($('#websigninfrm').length > 0){
 			            //billTemplate = $(templates).find('#bill-template').html();
 			            billAtRateTemplate = $(templates).find('#bill-at-rate-template').html();
 			            billOnCounterTemplate = $(templates).find('#bill-on-counter-template').html();
+			            billOnWaterCounterTemplate = $(templates).find('#bill-on-water-counter-template').html();
 			            //console.log(billTemplate);
 			            var template = Hogan.compile(accountTemplate);
 
-			            
+			            /*resp[dataInfo] = {
+							'nowMonth' : nowMonth
+						};*/
 						/*resp[currentData] = {
 							'prevDate' : prevDate.toLocaleString("ru", dateFormatOptions),
 							'beforePrevDate' : beforePrevDate.toLocaleString("ru", dateFormatOptions)
@@ -172,26 +195,33 @@ if($('#websigninfrm').length > 0){
 						        });
 						});
 
-						function printBill(type, data){
+						function printBill(type, kind){
 
 							var template;
+							var data;
 
 							switch (type) {
 							  case 21:
+							  	data = heatBillData;
 							    template = Hogan.compile(billAtRateTemplate);
 							    break;
 							  case 22:
+							  	data = heatBillData;
 							    template = Hogan.compile(billOnCounterTemplate);
 							    break;
 							  case 11:
+							  	data = waterBillData;
 							    template = Hogan.compile("");
 							    break;
 							  case 12:
-							    template = Hogan.compile("");
+							  	data = waterBillData;
+							    template = Hogan.compile(billOnWaterCounterTemplate);
 							    break;
 							  default:
 							    //template = Hogan.compile(billTemplate);
 							}
+
+							if (kind == 'empty') {data = {};}
 
 							var rendered = template.render(data);
 
@@ -206,13 +236,13 @@ if($('#websigninfrm').length > 0){
 						$("input[name=print-bill]").click(function(ev){
 
 							ev.preventDefault();
-							printBill($(this).data('type'), heatBillData);
+							printBill($(this).data('type'), 'filled');
 						});
 
 						$("input[name=print-empty-bill]").click(function(ev){
 
 							ev.preventDefault();
-							printBill($(this).data('type'), {});
+							printBill($(this).data('type'), 'empty');
 						});            
 
 					}, 'html');

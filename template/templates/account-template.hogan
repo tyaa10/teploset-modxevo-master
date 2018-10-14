@@ -254,9 +254,41 @@
                     </h3>
                     <div class="table">
                         <!-- [[-TvTable? &tvname;=`tableSub`]] -->
-                        Раздел в состоянии разработки
-                    </div>
-                </div>
+                        <div class="divTable">
+                            <div class="divTableBody">
+                                <div class="divTableRow">
+                                    <div class="divTableCell">
+                                        С
+                                    </div>
+                                    <div class="divTableCell">
+                                        По
+                                    </div>
+                                    <div class="divTableCell">
+                                        {{dict.Сумма}}
+                                    </div>
+                                </div>
+                                {{#accountSubsidies}}
+                                <div class="divTableRow">
+                                    <div class="divTableCell">
+                                        {{dateFrom}}
+                                    </div>
+                                    <div class="divTableCell">
+                                        {{dateTo}}
+                                    </div>
+                                    <div class="divTableCell">
+                                        {{sum}}
+                                    </div>
+                                </div>
+                                {{/accountSubsidies}}
+	                    		{{^accountSubsidies}}
+                                <div class="divTableRow">
+                                    У Вас не было субсидий
+                                </div>
+                                {{/accountSubsidies}}
+                            </div>
+                    	</div>
+                	</div>
+            	</div>
                 <div id="bill-section">
                     <h3>
                         Оплата
@@ -882,7 +914,7 @@
 		                    <p>
 		                        оплачена до
 		                        <span class="T1">
-		                            20 _________
+		                            20 <u>{{nowMonth}}</u>
 		                        </span>
 		                    </p>
 		                </td>
@@ -1427,7 +1459,7 @@
 		                    <p>
 		                        оплачена до
 		                        <span class="T1">
-		                            20 _________
+		                            20 <u>{{nowMonth}}</u>
 		                        </span>
 		                    </p>
 		                </td>
@@ -1862,6 +1894,2845 @@
 		                </td>
 		            </tr>
 		        </table>
+		    </body>
+		</html>
+    </div>
+    <div id="bill-on-water-counter-template">
+    	<html xmlns="http://www.w3.org/1999/xhtml">
+	    <!--This file was converted to xhtml by LibreOffice - see http://cgit.freedesktop.org/libreoffice/core/tree/filter/source/xslt for the code.-->
+	    <head profile="http://dublincore.org/documents/dcmi-terms/">
+	        <meta content="application/xhtml+xml; charset=utf-8" http-equiv="Content-Type"/>
+	        <title xml:lang="en-US">
+	            - no title specified
+	        </title>
+	        <meta content="" name="DCTERMS.title" xml:lang="en-US"/>
+	        <meta content="en-US" name="DCTERMS.language" scheme="DCTERMS.RFC4646"/>
+	        <meta content="http://xml.openoffice.org/odf2xhtml" name="DCTERMS.source"/>
+	        <meta content="Windows User" name="DCTERMS.creator"/>
+	        <meta content="2018-10-10T07:26:00" name="DCTERMS.issued" scheme="DCTERMS.W3CDTF"/>
+	        <meta content="Friend" name="DCTERMS.contributor"/>
+	        <meta content="2018-10-10T05:31:00" name="DCTERMS.modified" scheme="DCTERMS.W3CDTF"/>
+	        <meta content="" name="DCTERMS.provenance" xml:lang="en-US"/>
+	        <meta content="," name="DCTERMS.subject" xml:lang="en-US"/>
+	        <link href="http://purl.org/dc/elements/1.1/" hreflang="en" rel="schema.DC"/>
+	        <link href="http://purl.org/dc/terms/" hreflang="en" rel="schema.DCTERMS"/>
+	        <link href="http://purl.org/dc/dcmitype/" hreflang="en" rel="schema.DCTYPE"/>
+	        <link href="http://purl.org/dc/dcam/" hreflang="en" rel="schema.DCAM"/>
+	        <style type="text/css">
+            @page {  }
+			table { border-collapse:collapse; border-spacing:0; empty-cells:show }
+			td, th { vertical-align:top; font-size:12pt;}
+			h1, h2, h3, h4, h5, h6 { clear:both;}
+			ol, ul { margin:0; padding:0;}
+			li { list-style: none; margin:0; padding:0;}
+			/* "li span.odfLiEnd" - IE 7 issue*/
+			li span. { clear: both; line-height:0; width:0; height:0; margin:0; padding:0; }
+			span.footnodeNumber { padding-right:1em; }
+			span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }
+			span.heading_numbering { margin-right: 0.8rem; }* { margin:0;}
+			.gr1 { font-size:11pt; font-family:Times New Roman; vertical-align:top; }
+			.P1 { font-size:12pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; }
+			.P10 { font-size:8.5pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; }
+			.P11 { font-size:9.5pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; }
+			.P12 { font-size:7.5pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; }
+			.P13 { font-size:11pt; text-align:center ! important; font-family:Times New Roman; writing-mode:lr-tb; line-height:0.323cm; }
+			.P14 { font-size:3.5pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; }
+			.P15 { font-size:11pt; text-align:center ! important; font-family:Times New Roman; writing-mode:lr-tb; line-height:0.319cm; }
+			.P16 { font-size:4pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; }
+			.P17 { font-size:10.5pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; }
+			.P18 { font-size:2.5pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; }
+			.P19 { font-size:5pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; }
+			.P2 { font-size:12pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; line-height:0.035cm; }
+			.P20 { font-size:1.5pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; }
+			.P21 { font-size:11pt; text-align:right ! important; font-family:Times New Roman; writing-mode:lr-tb; }
+			.P22 { font-size:5.5pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; }
+			.P23 { font-size:9pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; }
+			.P24 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; line-height:0.035cm; }
+			.P25 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.423cm; margin-right:0cm; line-height:0.312cm; text-indent:0cm; }
+			.P26 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.423cm; margin-right:0cm; text-indent:0cm; }
+			.P27 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.635cm; margin-right:0cm; text-indent:0cm; }
+			.P28 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.035cm; margin-right:0cm; text-indent:0cm; }
+			.P29 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.035cm; margin-right:0cm; line-height:0.335cm; text-indent:0cm; }
+			.P3 { font-size:12pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; line-height:0.083cm; }
+			.P30 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.035cm; margin-right:0cm; line-height:0.397cm; text-indent:0cm; }
+			.P31 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.035cm; margin-right:0cm; line-height:0.337cm; text-indent:0cm; }
+			.P32 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.988cm; margin-right:0cm; text-indent:0cm; }
+			.P33 { font-size:11pt; text-align:right ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0cm; margin-right:0.053cm; text-indent:0cm; }
+			.P34 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.071cm; margin-right:0cm; text-indent:0cm; }
+			.P35 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.071cm; margin-right:0cm; line-height:0.284cm; text-indent:0cm; }
+			.P36 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.071cm; margin-right:0cm; line-height:0.319cm; text-indent:0cm; }
+			.P37 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.071cm; margin-right:0cm; line-height:0.335cm; text-indent:0cm; }
+			.P38 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.071cm; margin-right:0cm; line-height:0.397cm; text-indent:0cm; }
+			.P39 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:1.305cm; margin-right:0cm; line-height:0.284cm; text-indent:0cm; }
+			.P4 { font-size:12pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; line-height:0.009cm; }
+			.P40 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.67cm; margin-right:0cm; line-height:0.482cm; text-indent:0cm; }
+			.P41 { font-size:11pt; text-align:right ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0cm; margin-right:0.353cm; line-height:0.351cm; text-indent:0cm; }
+			.P42 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:1.023cm; margin-right:0cm; line-height:0.323cm; text-indent:0cm; }
+			.P43 { font-size:11pt; text-align:center ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0cm; margin-right:0.035cm; line-height:0.323cm; text-indent:0cm; }
+			.P44 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.106cm; margin-right:0cm; line-height:0.323cm; text-indent:0cm; }
+			.P45 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.282cm; margin-right:0cm; text-indent:0cm; }
+			.P46 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.388cm; margin-right:0cm; line-height:0.312cm; text-indent:0cm; }
+			.P47 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.388cm; margin-right:0cm; line-height:0.339cm; text-indent:0cm; }
+			.P48 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.6cm; margin-right:0cm; line-height:0.312cm; text-indent:0cm; }
+			.P49 { font-size:11pt; text-align:center ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.27cm; margin-right:0cm; line-height:0.344cm; text-indent:0cm; }
+			.P5 { font-size:1pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; }
+			.P50 { font-size:11pt; text-align:center ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0cm; margin-right:0.305cm; line-height:0.344cm; text-indent:0cm; }
+			.P51 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.176cm; margin-right:0cm; text-indent:0cm; }
+			.P52 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.706cm; margin-right:0cm; text-indent:0cm; }
+			.P53 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.353cm; margin-right:0cm; line-height:0.344cm; text-indent:0cm; }
+			.P54 { font-size:11pt; text-align:right ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0cm; margin-right:1.676cm; line-height:0.309cm; text-indent:0cm; }
+			.P55 { font-size:11pt; text-align:right ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0cm; margin-right:1.676cm; line-height:0.346cm; text-indent:0cm; }
+			.P56 { font-size:11pt; text-align:right ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0cm; margin-right:0.005cm; text-indent:0cm; }
+			.P57 { font-size:11pt; text-align:right ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0cm; margin-right:0.653cm; line-height:0.337cm; text-indent:0cm; }
+			.P58 { font-size:11pt; text-align:right ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0cm; margin-right:0.64cm; text-indent:0cm; }
+			.P59 { font-size:11pt; text-align:right ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0cm; margin-right:0.741cm; text-indent:0cm; }
+			.P6 { font-size:1pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; line-height:0.035cm; }
+			.P60 { font-size:11pt; text-align:center ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0cm; margin-right:0.388cm; text-indent:0cm; }
+			.P61 { font-size:11pt; text-align:center ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.199cm; margin-right:0cm; line-height:0.312cm; text-indent:0cm; }
+			.P62 { font-size:11pt; text-align:center ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0cm; margin-right:0.406cm; line-height:0.351cm; text-indent:0cm; }
+			.P63 { font-size:11pt; text-align:center ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.34cm; margin-right:0cm; line-height:0.344cm; text-indent:0cm; }
+			.P64 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.318cm; margin-right:0cm; line-height:0.328cm; text-indent:0cm; }
+			.P65 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.212cm; margin-right:1.552cm; line-height:91%; text-indent:4.665cm; }
+			.P66 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:4.904cm; margin-right:0.423cm; line-height:98%; text-indent:0cm; }
+			.P67 { font-size:11pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; margin-left:1.976cm; margin-right:0.212cm; line-height:75%; text-indent:-4.895cm; }
+			.P68 { font-size:11pt; font-family:Times New Roman; writing-mode:page; text-align:center ! important; }
+			.P7 { font-size:7pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; }
+			.P8 { font-size:8pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; }
+			.P9 { font-size:11.5pt; text-align:left ! important; font-family:Times New Roman; writing-mode:lr-tb; }
+			.Standard { font-size:11pt; font-family:Times New Roman; writing-mode:lr-tb; text-align:left ! important; }
+			.Таблица1 { width:19.846cm; margin-left:0.035cm; margin-top:0cm; margin-bottom:0cm; margin-right:auto;writing-mode:lr-tb; }
+			.Таблица1_A1 { vertical-align:bottom; padding:0cm; border-style:none; }
+			.Таблица1_B6 { vertical-align:bottom; padding:0cm; border-left-style:none; border-right-style:none; border-top-style:none; border-bottom-width:NaNcm; border-bottom-style:solid; border-bottom-color:#00000a; }
+			.Таблица1_B7 { vertical-align:bottom; padding:0cm; border-left-style:none; border-right-width:NaNcm; border-right-style:solid; border-right-color:#00000a; border-top-style:none; border-bottom-style:none; }
+			.Таблица1_F7 { vertical-align:bottom; padding:0cm; border-left-style:none; border-right-width:NaNcm; border-right-style:solid; border-right-color:#00000a; border-top-style:none; border-bottom-width:NaNcm; border-bottom-style:solid; border-bottom-color:#00000a; }
+			.Таблица1_J2 { vertical-align:bottom; padding:0cm; border-left-style:none; border-right-style:none; border-top-width:NaNcm; border-top-style:solid; border-top-color:#00000a; border-bottom-style:none; }
+			.Таблица1_L19 { vertical-align:bottom; padding:0cm; border-left-width:NaNcm; border-left-style:solid; border-left-color:#00000a; border-right-style:none; border-top-style:none; border-bottom-style:none; }
+			.Таблица1_L21 { vertical-align:bottom; padding:0cm; border-left-width:NaNcm; border-left-style:solid; border-left-color:#00000a; border-right-style:none; border-top-style:none; border-bottom-width:NaNcm; border-bottom-style:solid; border-bottom-color:#00000a; }
+			.Таблица1_A { width:4.725cm; }
+			.Таблица1_B { width:0.072cm; }
+			.Таблица1_C { width:1.977cm; }
+			.Таблица1_D { width:0.245cm; }
+			.Таблица1_E { width:2.118cm; }
+			.Таблица1_F { width:0.494cm; }
+			.Таблица1_G { width:2.399cm; }
+			.Таблица1_H { width:0.459cm; }
+			.Таблица1_I { width:1.94cm; }
+			.Таблица1_J { width:0.071cm; }
+			.Таблица1_K { width:1.307cm; }
+			.Таблица1_L { width:0.529cm; }
+			.Таблица1_M { width:0.279cm; }
+			.Таблица1_N { width:0.423cm; }
+			.Таблица1_O { width:0.598cm; }
+			.Таблица1_P { width:1.342cm; }
+			.Таблица1_Q { width:0.106cm; }
+			.Таблица1_R { width:0.422cm; }
+			.Таблица1_S { width:0.213cm; }
+			.Таблица1_U { width:0.049cm; }
+			.T1 { vertical-align:sub; font-size:58%;font-family:Arial; font-size:18pt; }
+			.T10 { font-family:Arial; font-size:10pt; font-weight:bold; }
+			.T11 { font-family:Arial; font-size:9pt; }
+			.T12 { font-family:Arial; font-size:9pt; }
+			.T13 { font-family:Arial; font-size:9pt; }
+			.T14 { font-family:Arial; font-size:9pt; }
+			.T15 { font-family:Arial; font-size:9pt; font-weight:bold; }
+			.T16 { font-family:Arial; font-size:9pt; font-style:italic; }
+			.T17 { font-family:Arial; font-size:12pt; font-weight:bold; }
+			.T18 { font-family:Arial; font-size:7pt; font-weight:bold; }
+			.T19 { font-family:Arial; font-size:6pt; font-weight:bold; }
+			.T2 { vertical-align:sub; font-size:58%;font-family:Arial; font-size:14pt; }
+			.T20 { font-family:Arial; font-size:12.5pt; }
+			.T21 { font-size:10pt; }
+			.T22 { font-size:14pt; font-weight:bold; }
+			.T23 { font-size:12pt; font-weight:bold; }
+			.T24 { font-weight:bold; }
+			.T3 { vertical-align:sub; font-size:58%;font-family:Arial; font-size:16pt; }
+			.T4 { vertical-align:sub; font-size:58%;font-family:Arial; font-size:12.5pt; }
+			.T5 { font-family:Arial; font-size:8pt; }
+			.T6 { font-family:Arial; font-size:8pt; }
+			.T7 { font-family:Arial; font-size:8pt; }
+			.T8 { font-family:Arial; font-size:8pt; font-weight:bold; }
+			.T9 { font-family:Arial; font-size:8pt; font-style:italic; }
+			/* ODF styles with no properties representable as CSS */
+			.Таблица1.1 .Таблица1.10 .Таблица1.11 .Таблица1.13 .Таблица1.14 .Таблица1.15 .Таблица1.16 .Таблица1.17 .Таблица1.2 .Таблица1.20 .Таблица1.21 .Таблица1.22 .Таблица1.23 .Таблица1.24 .Таблица1.25 .Таблица1.27 .Таблица1.28 .Таблица1.29 .Таблица1.3 .Таблица1.30 .Таблица1.34 .Таблица1.4 .Таблица1.5 .Таблица1.6 .Таблица1.7 .Таблица1.8 .Таблица1.9 .ListLabel_20_1 .ListLabel_20_2 .ListLabel_20_3 .ListLabel_20_4 .ListLabel_20_5 .ListLabel_20_6 .ListLabel_20_7 .ListLabel_20_8  { }
+		        </style>
+		    </head>
+		    <body dir="ltr" style="max-width:21.001cm;margin-top:0.284cm; margin-bottom:0cm; margin-left:0.564cm; margin-right:0.529cm; ">
+		        <p class="P51">
+		            <span class="T11">
+		                ККП "Мариупольтеплосеть"
+		            </span>
+		            <span class="T5">
+		                ул. Гризодубовой,1 р/с 26038302418317 в ДОУ АТ "Ощадбанк" МФО 335106 ОКПО 33760279
+		            </span>
+		        </p>
+		        <!--Next 'div' was a 'text:p'.-->
+		        <div style="clear:both; line-height:0; width:0; height:0; margin:0; padding:0;">
+		        </div>
+		        <table border="0" cellpadding="0" cellspacing="0" class="Таблица1 table-background-image">
+		            <colgroup>
+		                <col width="206">
+		                </col>
+		                <col width="3">
+		                </col>
+		                <col width="86">
+		                </col>
+		                <col width="11">
+		                </col>
+		                <col width="93">
+		                </col>
+		                <col width="22">
+		                </col>
+		                <col width="105">
+		                </col>
+		                <col width="20">
+		                </col>
+		                <col width="85">
+		                </col>
+		                <col width="3">
+		                </col>
+		                <col width="57">
+		                </col>
+		                <col width="23">
+		                </col>
+		                <col width="12">
+		                </col>
+		                <col width="18">
+		                </col>
+		                <col width="26">
+		                </col>
+		                <col width="59">
+		                </col>
+		                <col width="5">
+		                </col>
+		                <col width="18">
+		                </col>
+		                <col width="9">
+		                </col>
+		                <col width="3">
+		                </col>
+		                <col width="2">
+		                </col>
+		            </colgroup>
+		            <tr class="Таблица11">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.072cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" colspan="3" style="text-align:left;width:1.977cm; ">
+		                    <p class="P27">
+		                        <span class="T5">
+		                            ИЗВЕЩЕНИЕ об оплате за <u>{{prevMonth}}</u>
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" colspan="3" style="text-align:left;width:0.494cm; ">
+		                    <p class="P28">
+		                        <span class="T10">
+		                            
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" colspan="2" style="text-align:left;width:1.94cm; ">
+		                    <p class="P32">
+		                        <span class="T11">
+		                            л/с №
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" colspan="3" style="text-align:left;width:1.307cm; ">
+		                    <p class="P33">
+		                        <span class="T22">
+		                            {{accountCode}}
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.423cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.598cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.342cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.106cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.422cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.213cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.071cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица12">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.072cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" colspan="3" style="text-align:left;width:1.977cm; ">
+		                    <p class="P35">
+		                        <span class="T5">
+		                            ФИО:
+		                        </span>
+		                        <span class="T8">
+		                            <u>{{fio}}</u>
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.494cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" colspan="2" style="text-align:left;width:2.399cm; ">
+		                    <p class="P39">
+		                        <span class="T5">
+		                            Кол. чел.:
+		                        </span>
+		                        <span class="T8">
+		                            {{tenantCount}}
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.94cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_J2" style="text-align:left;width:0.071cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_J2" style="text-align:left;width:1.307cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_J2" style="text-align:left;width:0.529cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_J2" style="text-align:left;width:0.279cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_J2" style="text-align:left;width:0.423cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.598cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.342cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.106cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.422cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.213cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.071cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица13">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.072cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" colspan="5" style="text-align:left;width:1.977cm; ">
+		                    <p class="P34">
+		                        <span class="T5">
+		                            Адрес:
+		                        </span>
+		                        <span class="T8">
+		                            <u>{{address}}</u>
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.459cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.94cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.071cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.307cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.529cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.279cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.423cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.598cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.342cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.106cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.422cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.213cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.071cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица14">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P9">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.072cm; ">
+		                    <p class="P9">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.977cm; ">
+		                    <p class="P9">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.245cm; ">
+		                    <p class="P9">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" colspan="6" style="text-align:left;width:2.118cm; ">
+		                    <p class="P40">
+		                        <span class="T15">
+		                            {{titleLong}}
+		                        </span>
+		                        <span class="T23">
+		                            {{titleShort}}
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.307cm; ">
+		                    <p class="P9">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.529cm; ">
+		                    <p class="P9">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.279cm; ">
+		                    <p class="P9">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.423cm; ">
+		                    <p class="P9">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.598cm; ">
+		                    <p class="P9">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.342cm; ">
+		                    <p class="P9">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.106cm; ">
+		                    <p class="P9">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.422cm; ">
+		                    <p class="P9">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.213cm; ">
+		                    <p class="P9">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.071cm; ">
+		                    <p class="P9">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица15">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P10">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.072cm; ">
+		                    <p class="P10">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" colspan="10" style="text-align:left;width:1.977cm; ">
+		                    <p class="P41">
+		                        <span class="T16">
+		                            Оплата за горячую воду производится по показаниям счетчика
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.279cm; ">
+		                    <p class="P10">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.423cm; ">
+		                    <p class="P10">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.598cm; ">
+		                    <p class="P10">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.342cm; ">
+		                    <p class="P10">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.106cm; ">
+		                    <p class="P10">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.422cm; ">
+		                    <p class="P10">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.213cm; ">
+		                    <p class="P10">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.071cm; ">
+		                    <p class="P10">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица16">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P11">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.072cm; ">
+		                    <p class="P11">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" colspan="2" style="text-align:left;width:1.977cm; ">
+		                    <p class="P11">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:2.118cm; ">
+		                    <p class="P11">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.494cm; ">
+		                    <p class="P11">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:2.399cm; ">
+		                    <p class="P11">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" colspan="2" style="text-align:left;width:0.459cm; ">
+		                    <p class="P11">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.071cm; ">
+		                    <p class="P11">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.307cm; ">
+		                    <p class="P11">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.529cm; ">
+		                    <p class="P11">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.279cm; ">
+		                    <p class="P11">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.423cm; ">
+		                    <p class="P11">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.598cm; ">
+		                    <p class="P11">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.342cm; ">
+		                    <p class="P11">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.106cm; ">
+		                    <p class="P11">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.422cm; ">
+		                    <p class="P11">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.213cm; ">
+		                    <p class="P11">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.071cm; ">
+		                    <p class="P11">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица17">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P12">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.072cm; ">
+		                    <p class="P12">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" colspan="3" style="text-align:left;width:1.977cm; ">
+		                    <p class="P42">
+		                        <span class="T8">
+		                            Показания счетчика
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.494cm; ">
+		                    <p class="P12">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:2.399cm; ">
+		                    <p class="P13">
+		                        <span class="T5">
+		                            Объем
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" colspan="3" style="text-align:left;width:0.459cm; ">
+		                    <p class="P43">
+		                        <span class="T6">
+		                            Тариф, грн./м3
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" colspan="2" style="text-align:left;width:1.307cm; ">
+		                    <p class="P44">
+		                        <span class="T5">
+		                            Сумма, грн.
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" colspan="8" rowspan="2" style="text-align:left;width:0.279cm; ">
+		                    <p class="P45">
+		                        <span class="T11">
+		                            Подпись абонента
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица18">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.072cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" rowspan="2" style="text-align:left;width:1.977cm; ">
+		                    <p class="P46">
+		                        <span class="T5">
+		                            Конечные
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.245cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" rowspan="2" style="text-align:left;width:2.118cm; ">
+		                    <p class="P48">
+		                        <span class="T6">
+		                            Начальные
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.494cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" rowspan="2" style="text-align:left;width:2.399cm; ">
+		                    <p class="P15">
+		                        <span class="T7">
+		                            потребления, м3
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.459cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.94cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.307cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.529cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица19">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.072cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.245cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.494cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.459cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.94cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.307cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.529cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.279cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.423cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.598cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.342cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.106cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.422cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.213cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица110">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.072cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.977cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.245cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:2.118cm; ">
+		                    <p class="P49">
+		                        <span class="T12">
+		                            {{beginMeter}}
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.494cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:2.399cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.459cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.94cm; ">
+		                    <p class="P50">
+		                        <span class="T13">
+		                            {{tariff}}
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.307cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.529cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.279cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.423cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.598cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.342cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.106cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.422cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.213cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица111">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.072cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.977cm; ">
+		                    <p class="P29">
+		                        <span class="T11">
+		                            Льгота
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.245cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:2.118cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.494cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:2.399cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.459cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.94cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.307cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.529cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.279cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.423cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.598cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.342cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.106cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.422cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.213cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица111">
+		                <td class="Таблица1_B7" colspan="2" rowspan="2" style="text-align:left;width:4.725cm; ">
+		                    <p class="P51">
+		                        <span class="T11">
+		                            Кассир___________________
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.977cm; ">
+		                    <p class="P29">
+		                        <span class="T11">
+		                            Перерасчет
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.245cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:2.118cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.494cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:2.399cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.459cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.94cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.307cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.529cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.279cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.423cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.598cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.342cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.106cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.422cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.213cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица113">
+		                <td class="Таблица1_B6" colspan="5" style="text-align:left;width:1.977cm; ">
+		                    <p class="P28">
+		                        <span class="T10">
+		                            Всего начислено за <u>{{prevMonth}}</u>
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.459cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.94cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.307cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.529cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.279cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.423cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.598cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.342cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.106cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.422cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.213cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица114">
+		                <td class="Таблица1_B7" colspan="2" rowspan="3" style="text-align:left;width:4.725cm; ">
+		                    <p class="P52">
+		                        <span class="T11">
+		                            Остается у кассира
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" rowspan="2" style="text-align:left;width:1.977cm; ">
+		                    <p class="P29">
+		                        <span class="T11">
+		                            Субсидия
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.245cm; ">
+		                    <p class="P18">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:2.118cm; ">
+		                    <p class="P18">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.494cm; ">
+		                    <p class="P18">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:2.399cm; ">
+		                    <p class="P18">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.459cm; ">
+		                    <p class="P18">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.94cm; ">
+		                    <p class="P18">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P18">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.307cm; ">
+		                    <p class="P18">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.529cm; ">
+		                    <p class="P18">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.279cm; ">
+		                    <p class="P18">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.423cm; ">
+		                    <p class="P18">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.598cm; ">
+		                    <p class="P18">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.342cm; ">
+		                    <p class="P18">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.106cm; ">
+		                    <p class="P18">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.422cm; ">
+		                    <p class="P18">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.213cm; ">
+		                    <p class="P18">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P18">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица115">
+		                <td class="Таблица1_B6" style="text-align:left;width:0.245cm; ">
+		                    <p class="P19">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:2.118cm; ">
+		                    <p class="P19">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.494cm; ">
+		                    <p class="P19">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:2.399cm; ">
+		                    <p class="P19">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.459cm; ">
+		                    <p class="P19">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.94cm; ">
+		                    <p class="P19">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P19">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.307cm; ">
+		                    <p class="P19">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.529cm; ">
+		                    <p class="P19">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.279cm; ">
+		                    <p class="P19">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.423cm; ">
+		                    <p class="P19">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.598cm; ">
+		                    <p class="P19">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.342cm; ">
+		                    <p class="P19">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.106cm; ">
+		                    <p class="P19">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.422cm; ">
+		                    <p class="P19">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.213cm; ">
+		                    <p class="P19">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P19">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица116">
+		                <td class="Таблица1_B6" style="text-align:left;width:1.977cm; ">
+		                    <p class="P30">
+		                        <span class="T17">
+		                            Оплата
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.245cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:2.118cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.494cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:2.399cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.459cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.94cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.307cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.529cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" colspan="4" style="text-align:left;width:0.279cm; ">
+		                    <p class="P28">
+		                        <span class="T5">
+		                            в т.ч.долг
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.106cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" colspan="3" style="text-align:left;width:0.422cm; ">
+		                    <p class="Standard">
+		                        <span class="T5">
+		                            грн.
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица117">
+		                <td class="Таблица1_B6" style="text-align:left;width:4.725cm; ">
+		                    <p class="P20">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.072cm; ">
+		                    <p class="P20">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.977cm; ">
+		                    <p class="P20">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.245cm; ">
+		                    <p class="P20">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:2.118cm; ">
+		                    <p class="P20">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.494cm; ">
+		                    <p class="P20">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:2.399cm; ">
+		                    <p class="P20">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.459cm; ">
+		                    <p class="P20">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.94cm; ">
+		                    <p class="P20">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.071cm; ">
+		                    <p class="P20">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.307cm; ">
+		                    <p class="P20">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.529cm; ">
+		                    <p class="P20">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.279cm; ">
+		                    <p class="P20">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.423cm; ">
+		                    <p class="P20">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.598cm; ">
+		                    <p class="P20">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.342cm; ">
+		                    <p class="P20">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.106cm; ">
+		                    <p class="P20">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.422cm; ">
+		                    <p class="P20">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.213cm; ">
+		                    <p class="P20">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.071cm; ">
+		                    <p class="P20">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица110">
+		                <td class="Таблица1_B7" colspan="2" style="text-align:left;width:4.725cm; ">
+		                    <p class="P53">
+		                        <span class="T11">
+		                            ККП "Мариупольтеплосеть"
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" colspan="9" style="text-align:left;width:1.977cm; ">
+		                    <p class="P21">
+		                        <span class="T5">
+		                            ул. Гризодубовой,1 р/с 26038302418317 в ДОУ АТ "Ощадбанк" МФО 335106 ОКПО
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" colspan="5" style="text-align:left;width:0.529cm; ">
+		                    <p class="P54">
+		                        <span class="T5">
+		                            33760279
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.106cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.422cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.213cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.071cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица13">
+		                <td class="Таблица1_B7" colspan="2" style="text-align:left;width:4.725cm; ">
+		                    <p class="P47">
+		                        <span class="T11">
+		                            Квитанция должна быть
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.977cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" colspan="2" rowspan="2" style="text-align:left;width:0.245cm; ">
+		                    <p class="P51">
+		                        <span class="T5">
+		                            КВИТАНЦИЯ за <u>{{prevMonth}}</u>
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" colspan="3" style="text-align:left;width:0.494cm; ">
+		                    <p class="P31">
+		                        <span class="T10">
+		                            
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.94cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.071cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" rowspan="2" style="text-align:left;width:1.307cm; ">
+		                    <p class="P56">
+		                        <span class="T11">
+		                            л/с №
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_L19" style="text-align:left;width:0.529cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" colspan="4" style="text-align:left;width:0.279cm; ">
+		                    <p class="P57">
+		                        <span class="T24">
+		                            {{accountCode}}
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.106cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.422cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.213cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.071cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица120">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.072cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.977cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.494cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:2.399cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.459cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.94cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.071cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_L19" style="text-align:left;width:0.529cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.279cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.423cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.598cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.342cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.106cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.422cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.213cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.071cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P6">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица121">
+		                <td class="Таблица1_B7" colspan="2" rowspan="2" style="text-align:left;width:4.725cm; ">
+		                    <p class="P34">
+		                        <span class="T11">
+		                            оплачена до
+		                        </span>
+		                        <span class="T15">
+		                            20 {{nowMonthYear}}
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" colspan="3" rowspan="2" style="text-align:left;width:1.977cm; ">
+		                    <p class="P34">
+		                        <span class="T5">
+		                            ФИО:
+		                        </span>
+		                        <span class="T8">
+		                            {{fio}}
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.494cm; ">
+		                    <p class="P22">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:2.399cm; ">
+		                    <p class="P22">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.459cm; ">
+		                    <p class="P22">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" colspan="3" rowspan="2" style="text-align:left;width:1.94cm; ">
+		                    <p class="P58">
+		                        <span class="T5">
+		                            Кол. чел.:
+		                        </span>
+		                        <span class="T8">
+		                            {{tenantCount}}
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_L21" style="text-align:left;width:0.529cm; ">
+		                    <p class="P22">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.279cm; ">
+		                    <p class="P22">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.423cm; ">
+		                    <p class="P22">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.598cm; ">
+		                    <p class="P22">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.342cm; ">
+		                    <p class="P22">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.106cm; ">
+		                    <p class="P22">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.422cm; ">
+		                    <p class="P22">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.213cm; ">
+		                    <p class="P22">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.071cm; ">
+		                    <p class="P22">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица122">
+		                <td class="Таблица1_A1" style="text-align:left;width:0.494cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:2.399cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.459cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.529cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.279cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.423cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.598cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.342cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.106cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.422cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.213cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.071cm; ">
+		                    <p class="P7">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица123">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P12">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.072cm; ">
+		                    <p class="P12">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" colspan="5" style="text-align:left;width:1.977cm; ">
+		                    <p class="P36">
+		                        <span class="T5">
+		                            Адрес:
+		                        </span>
+		                        <span class="T8">
+		                            {{address}}
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.459cm; ">
+		                    <p class="P12">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.94cm; ">
+		                    <p class="P12">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.071cm; ">
+		                    <p class="P12">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.307cm; ">
+		                    <p class="P12">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.529cm; ">
+		                    <p class="P12">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.279cm; ">
+		                    <p class="P12">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.423cm; ">
+		                    <p class="P12">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.598cm; ">
+		                    <p class="P12">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.342cm; ">
+		                    <p class="P12">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.106cm; ">
+		                    <p class="P12">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.422cm; ">
+		                    <p class="P12">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.213cm; ">
+		                    <p class="P12">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.071cm; ">
+		                    <p class="P12">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица124">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.072cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.977cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.245cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:2.118cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.494cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" colspan="6" style="text-align:left;width:2.399cm; ">
+		                    <p class="P59">
+		                        <span class="T15">
+		                            {{titleLong}}
+		                        </span>
+		                        <span class="T23">
+		                            {{titleShort}}
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.279cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.423cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.598cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.342cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.106cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.422cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.213cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.071cm; ">
+		                    <p class="P1">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица125">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P10">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.072cm; ">
+		                    <p class="P10">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.977cm; ">
+		                    <p class="P10">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.245cm; ">
+		                    <p class="P10">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" colspan="12" style="text-align:left;width:2.118cm; ">
+		                    <p class="P55">
+		                        <span class="T16">
+		                            Оплата за горячую воду производится по показаниям счетчика
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.106cm; ">
+		                    <p class="P10">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.422cm; ">
+		                    <p class="P10">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.213cm; ">
+		                    <p class="P10">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.071cm; ">
+		                    <p class="P10">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица17">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P12">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.072cm; ">
+		                    <p class="P12">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" colspan="3" style="text-align:left;width:1.977cm; ">
+		                    <p class="P42">
+		                        <span class="T8">
+		                            Показания счетчика
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.494cm; ">
+		                    <p class="P12">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:2.399cm; ">
+		                    <p class="P13">
+		                        <span class="T5">
+		                            Объем
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" colspan="3" style="text-align:left;width:0.459cm; ">
+		                    <p class="P43">
+		                        <span class="T6">
+		                            Тариф, грн./м3
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" colspan="2" style="text-align:left;width:1.307cm; ">
+		                    <p class="P44">
+		                        <span class="T5">
+		                            Сумма, грн.
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.279cm; ">
+		                    <p class="P12">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" colspan="7" rowspan="2" style="text-align:left;width:0.423cm; ">
+		                    <p class="P60">
+		                        <span class="T14">
+		                            Тариф на горячую
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица127">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.072cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" rowspan="2" style="text-align:left;width:1.977cm; ">
+		                    <p class="P25">
+		                        <span class="T5">
+		                            Конечные
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.245cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" rowspan="2" style="text-align:left;width:2.118cm; ">
+		                    <p class="P61">
+		                        <span class="T6">
+		                            Начальные
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.494cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" rowspan="2" style="text-align:left;width:2.399cm; ">
+		                    <p class="P15">
+		                        <span class="T5">
+		                            потребления, м3
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.459cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.94cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.307cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.529cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.279cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица128">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.072cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.245cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.494cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.459cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.94cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.307cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.529cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.279cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.423cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.598cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" rowspan="2" style="text-align:left;width:1.342cm; ">
+		                    <p class="P62">
+		                        <span class="T11">
+		                            воду
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.106cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.422cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.213cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P14">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица129">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.072cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.977cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.245cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" rowspan="2" style="text-align:left;width:2.118cm; ">
+		                    <p class="P63">
+		                        <span class="T12">
+		                            {{beginMeter}}
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.494cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:2.399cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.459cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" rowspan="2" style="text-align:left;width:1.94cm; ">
+		                    <p class="P50">
+		                        <span class="T13">
+		                            {{tariff}}
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.307cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.529cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.279cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.423cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.598cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.106cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.422cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.213cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица130">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.072cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.977cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.245cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.494cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:2.399cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.459cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.307cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.529cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.279cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.423cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.598cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.342cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.106cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.422cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.213cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P16">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица111">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.072cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.977cm; ">
+		                    <p class="P37">
+		                        <span class="T11">
+		                            Льгота
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.245cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:2.118cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.494cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:2.399cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.459cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.94cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.307cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.529cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.279cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.423cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" colspan="6" style="text-align:left;width:0.598cm; ">
+		                    <p class="P64">
+		                        <span class="T11">
+		                            {{tariff}} грн.за м3
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица111">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.072cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.977cm; ">
+		                    <p class="P37">
+		                        <span class="T11">
+		                            Перерасчет
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.245cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:2.118cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.494cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:2.399cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.459cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.94cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.307cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.529cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.279cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.423cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.598cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.342cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.106cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.422cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.213cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P8">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица113">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.072cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" colspan="5" style="text-align:left;width:1.977cm; ">
+		                    <p class="P34">
+		                        <span class="T10">
+		                            Всего начислено за <u>{{prevMonth}}</u>
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.459cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.94cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.307cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.529cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.279cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.423cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.598cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:1.342cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.106cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.422cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.213cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица134">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P23">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.072cm; ">
+		                    <p class="P23">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.977cm; ">
+		                    <p class="P37">
+		                        <span class="T11">
+		                            Субсидия
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.245cm; ">
+		                    <p class="P23">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:2.118cm; ">
+		                    <p class="P23">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.494cm; ">
+		                    <p class="P23">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:2.399cm; ">
+		                    <p class="P23">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.459cm; ">
+		                    <p class="P23">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.94cm; ">
+		                    <p class="P23">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P23">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.307cm; ">
+		                    <p class="P23">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.529cm; ">
+		                    <p class="P23">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.279cm; ">
+		                    <p class="P23">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.423cm; ">
+		                    <p class="P23">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.598cm; ">
+		                    <p class="P23">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.342cm; ">
+		                    <p class="P23">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.106cm; ">
+		                    <p class="P23">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.422cm; ">
+		                    <p class="P23">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.213cm; ">
+		                    <p class="P23">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P23">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		            <tr class="Таблица116">
+		                <td class="Таблица1_A1" style="text-align:left;width:4.725cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B7" style="text-align:left;width:0.072cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.977cm; ">
+		                    <p class="P38">
+		                        <span class="T17">
+		                            Оплата
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.245cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:2.118cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.494cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:2.399cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.459cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.94cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.071cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:1.307cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" style="text-align:left;width:0.529cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" colspan="4" style="text-align:left;width:0.279cm; ">
+		                    <p class="P28">
+		                        <span class="T5">
+		                            в т.ч.долг
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_B6" style="text-align:left;width:0.106cm; ">
+		                    <p class="P17">
+		                    </p>
+		                </td>
+		                <td class="Таблица1_F7" colspan="3" style="text-align:left;width:0.422cm; ">
+		                    <p class="Standard">
+		                        <span class="T5">
+		                            грн.
+		                        </span>
+		                    </p>
+		                </td>
+		                <td class="Таблица1_A1" style="text-align:left;width:0.049cm; ">
+		                    <p class="P5">
+		                    </p>
+		                </td>
+		            </tr>
+		        </table>
+		        <p class="P3">
+		        </p>
+		        <ul>
+		            <li>
+		                <p class="P65" style="margin-left:0,212cm;">
+		                    <!-- <span style="display:block;float:left;min-width:NaNcm;">
+		                        ВВ
+		                    </span> -->
+		                    <span class="T9">
+		                        Последняя оплата на общую сумму {{lastPaymentSum}} грн. поступила {{lastPaymentDate}} г.,
+		                    </span>
+		                    <span class="T11">
+		                        Кассир___________________
+		                    </span>
+		                    <span class="T9">
+		                        последние зафиксированные показания по г/в {{beginMeter}} м3
+		                    </span>
+		                    <span class="odfLiEnd">
+		                    </span>
+		                </p>
+		            </li>
+		        </ul>
+		        <p class="P4">
+		        </p>
+		        <p class="P66">
+		            <span class="T18">
+		                Благодарим за своевременную оплату. . Информацию о состоянии расчетов, дату возникновения задолженности, средний объем потребления вы можете получить на участках ККП"Мариупольтеплосеть" по адресу ул. Куприна, 9а,
+		            </span>
+		        </p>
+		        <p class="P67">
+		            <span class="T2">
+		                10.10.2018
+		            </span>
+		            <span class="T18">
+		            </span>
+		            <span class="T3">
+		                /
+		            </span>
+		            <span class="T18">
+		            </span>
+		            <span class="T2">
+		                1
+		            </span>
+		            <span class="T21">
+		            </span>
+		            <span class="T11">
+		                Остается у абонента
+		            </span>
+		            <span class="T19">
+		                тел. 51-12-84, 067-6403343, Авар.Сл. 51-20-42, На участках работают кассы, где можно произвести оплату без комиссии.
+		            </span>
+		            <span class="T20">
+		            </span>
+		            <span class="T19">
+		                Тепловая инспекция 067-640-0504
+		            </span>
+		        </p>
+		        <p class="P24">
+		        </p>
 		    </body>
 		</html>
     </div>
